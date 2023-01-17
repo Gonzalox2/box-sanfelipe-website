@@ -19,7 +19,7 @@ import { NavItem } from './nav-item';
 
 const items = [
   {
-    href: '/',
+    href: '/news',
     icon: (<NewsIcon fontSize="small" />),
     title: 'Informaciones'
   },
