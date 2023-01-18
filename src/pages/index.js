@@ -1,25 +1,20 @@
 import Head from 'next/head';
-import { Box, Container, Grid } from '@mui/material';
-import { Budget } from '../components/dashboard/budget';
-import { LatestOrders } from '../components/dashboard/latest-orders';
-import { LatestProducts } from '../components/dashboard/latest-products';
-import { Sales } from '../components/dashboard/sales';
-import { TasksProgress } from '../components/dashboard/tasks-progress';
-import { TotalCustomers } from '../components/dashboard/total-customers';
-import { TotalProfit } from '../components/dashboard/total-profit';
-import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
+import { Box, Container, Grid, Pagination } from '@mui/material';
+import { listNews } from '../__mocks__/news';
+import { NewsListToolbar } from '../components/news/news-list-toolbar';
+import { NewsCard } from '../components/news/news-card';
 import { DashboardLayout } from '../components/dashboard-layout';
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Informaciones | BOX San Felipe
+        Informacion | BOX San Felipe
       </title>
     </Head>
     <Box
       component="main"
-      sx={{        
+      sx={{
         flexGrow: 1,
         py: 8,
         backgroundImage: `url(${"https://raw.githubusercontent.com/Gonzalox2/boxsanfelipe-website/ceb2a996b6e78cbfb5a4cd87e6988a58f33aec4a/app/images/Box_Background.jpg"})`,
@@ -30,84 +25,38 @@ const Page = () => (
         opacity: 1
       }}
     >
-      <Container maxWidth={false}>
-        <Grid
-          container
-          spacing={3}
+      <Container maxWidth={false}>        
+        <Box sx={{ pt: 3 }}>
+          <Grid
+            container
+            spacing={3}
+          >
+            {listNews.map((news) => (
+              <Grid
+                item
+                key={news.id}
+                lg={4}
+                md={6}
+                xs={12}
+              >
+                <NewsCard news={news} />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            pt: 3
+          }}
         >
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <Budget />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalCustomers />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <LatestProducts sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <LatestOrders />
-          </Grid>
-        </Grid>
+          <Pagination
+            color="primary"
+            count={3}
+            size="small"
+          />
+        </Box>
       </Container>
     </Box>
   </>

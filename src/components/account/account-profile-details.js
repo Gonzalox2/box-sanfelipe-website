@@ -29,6 +29,7 @@ export const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
     firstName: 'Katarina',
     lastName: 'Smith',
+    secLastName: 'Bond',
     email: 'demo@devias.io',
     phone: '',
     state: 'Alabama',
@@ -50,8 +51,8 @@ export const AccountProfileDetails = (props) => {
     >
       <Card>
         <CardHeader
-          subheader="The information can be edited"
-          title="Profile"
+          subheader="La informacion se puede editar"
+          title="Perfil"
         />
         <Divider />
         <CardContent>
@@ -61,14 +62,14 @@ export const AccountProfileDetails = (props) => {
           >
             <Grid
               item
-              md={6}
+              md={12}
               xs={12}
             >
               <TextField
                 fullWidth
-                helperText="Please specify the first name"
-                label="First name"
-                name="firstName"
+                helperText="Porfavor ingresa tu nombre"
+                label="Nombre"
+                name="Nombre"
                 onChange={handleChange}
                 required
                 value={values.firstName}
@@ -82,8 +83,8 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Last name"
-                name="lastName"
+                label="Apellido Paterno"
+                name="Apellido Paterno"
                 onChange={handleChange}
                 required
                 value={values.lastName}
@@ -97,7 +98,22 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Email Address"
+                label="Apellido Materno"
+                name="Apellido Materno"
+                onChange={handleChange}
+                required
+                value={values.secLastName}
+                variant="outlined"
+              />
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+              <TextField
+                fullWidth
+                label="Correo Electronico"
                 name="email"
                 onChange={handleChange}
                 required
@@ -112,7 +128,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Phone Number"
+                label="Telefono"
                 name="phone"
                 onChange={handleChange}
                 type="number"
@@ -127,7 +143,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Country"
+                label="Pais"
                 name="country"
                 onChange={handleChange}
                 required
@@ -142,7 +158,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Select State"
+                label="Region"
                 name="state"
                 onChange={handleChange}
                 required
@@ -175,7 +191,7 @@ export const AccountProfileDetails = (props) => {
             color="primary"
             variant="contained"
           >
-            Save details
+            Guardar Cambios
           </Button>
         </Box>
       </Card>

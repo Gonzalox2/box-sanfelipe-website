@@ -7,7 +7,7 @@ const Page = () => (
   <>
     <Head>
       <title>
-        404 | Material Kit
+        404 | BOX San Felipe
       </title>
     </Head>
     <Box
@@ -32,7 +32,7 @@ const Page = () => (
             color="textPrimary"
             variant="h1"
           >
-            404: The page you are looking for isn’t here
+            404: El sitio que estas buscando, no se encuentra aqui
           </Typography>
           <Typography
             align="center"
@@ -64,7 +64,7 @@ const Page = () => (
               sx={{ mt: 3 }}
               variant="contained"
             >
-              Go back to dashboard
+              Volver al sitio principal
             </Button>
           </NextLink>
         </Box>

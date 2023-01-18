@@ -49,7 +49,7 @@ export const theme = createTheme({
         root: {
           padding: '32px 24px',
           '&:last-child': {
-            paddingBottom: '32px'
+            paddingBottom: '32px' 
           }
         }
       }

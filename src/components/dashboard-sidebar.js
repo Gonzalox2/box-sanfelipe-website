@@ -19,7 +19,7 @@ import { NavItem } from './nav-item';
 
 const items = [
   {
-    href: '/news',
+    href: '/',
     icon: (<NewsIcon fontSize="small" />),
     title: 'Informaciones'
   },
@@ -29,9 +29,9 @@ const items = [
     title: 'Perfil'
   },
   {
-    href: '/customers',
+    href: '/users',
     icon: (<UsersIcon fontSize="small" />),
-    title: 'Customers'
+    title: 'Usuarios'
   },
   {
     href: '/products',
